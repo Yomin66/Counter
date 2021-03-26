@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
+        img.setOnLongClickListener(this)
 
         btnHappy.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
@@ -45,7 +46,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     }
 
     override fun onLongClick(v: View?): Boolean {
-        counter+=2
+        if(v==txv){
+            counter+=2
+        }else {
+            counter--
+        }
         txv.text = counter.toString()
         return true
     }

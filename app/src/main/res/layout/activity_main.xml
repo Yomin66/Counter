@@ -62,4 +62,10 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="樂透" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/y" />
 </LinearLayout>

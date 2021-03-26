@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClickListener{
     var counter:Int = 0
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         txv.setOnClickListener(this)
+        txv.setOnLongClickListener(this)
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
         button5.setOnClickListener(this)
@@ -41,5 +42,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             counter = 0
         }
         txv.text = counter.toString()
+    }
+
+    override fun onLongClick(v: View?): Boolean {
+        counter+=2
+        txv.text = counter.toString()
+        return true
     }
 }
